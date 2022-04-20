@@ -1,0 +1,32 @@
+{
+  "name": "chatbot",
+  "version": "1.0.1",
+  "description": "Asistente virtual para solucion de problemas",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luishurrea7/chatboot.git"
+  },
+  "keywords": [
+    "asistente",
+    "servicio",
+    "al",
+    "cliente",
+    "solucion",
+    "de",
+    "problemas",
+    "ayuda",
+    "movistar"
+  ],
+  "author": "Luis Urrea",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "3.5.3",
+    "child_process": "^1.0.2",
+    "moment-timezone": "^0.5.34"
+  }
+}
