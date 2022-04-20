@@ -81,6 +81,31 @@ export default async function chatbot (client, mensaje){
                 console.error(e)
             }
         }
+        
+        if ((chats || "").toLowerCase().startsWith('opc5')){
+            try {
+                const texto = `_Para consultar tu número de línea fija ☎️ por favor dirígete al modem si tú servicio es vozip y conecta en la parte trasera de el, en el puerto marcado como Voip o tel tu teléfono físico o acércate  directamente a tu teléfono si es una línea convencional y digita en el teclado de este el siguiente número:_\n*018000910218*\n_Al marcar este número se generará una llamada la cual mediante una grabación te notificará tu número de línea fija y el respectivo indicativo._`
+                const imagen = fs.readFileSync('./recursos/imagenes/señalando.jpg')
+                const messageLocation = await client.prepareMessage(destinatario, imagen, MessageType.image, {mimetype: Mimetype.jpeg})
+                const botones = [{ buttonId: `menu`, buttonText:{ displayText:'Menu Principal' }, type:1 }]
+                const mensajeBoton  = { imageMessage: messageLocation.message.imageMessage, contentText: texto,  footerText: '',  buttons: botones,  headerType: 4 }
+                client.sendMessage(destinatario, mensajeBoton , MessageType.buttonsMessage, {quoted:mensaje})
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        if ((chats || "").toLowerCase().startsWith('opc6')){
+            try {
+                const texto = `_*Si desea reportar algún daño en tu servicio te ofrecemos 3 opciones*_\n\n_1️⃣ Mediante la línea telefónica *018000930930* podrás llamar desde una SIM de Movistar o desde tu propia línea y reportar daños._\n_2️⃣ Podrás agregar en tus contactos el número *3152333333* el cual pertenece al WhatsApp oficial de servicio al cliente de *Movistar* y reportar daños,  contratar planes, pedir asesoría y muchas opciones más._\n_3️⃣ Mediante la línea *6015885204* podrás reportar daños y generar solicitudes, esta línea te brinda la oportunidad de llamar desde cualquier operador a diferencia de la *018000930930*_`
+                const imagen = fs.readFileSync('./recursos/imagenes/musica.jpg')
+                const messageLocation = await client.prepareMessage(destinatario, imagen, MessageType.image, {mimetype: Mimetype.jpeg})
+                const botones = [{ buttonId: `menu`, buttonText:{ displayText:'Menu Principal' }, type:1 }]
+                const mensajeBoton  = { imageMessage: messageLocation.message.imageMessage, contentText: texto,  footerText: '',  buttons: botones,  headerType: 4 }
+                client.sendMessage(destinatario, mensajeBoton , MessageType.buttonsMessage, {quoted:mensaje})
+            } catch (e) {
+                console.error(e)
+            }
+        }
         if ((chats || "").toLowerCase().startsWith('fib0')){
             try {
                 const texto = `_*💡NOTA IMPORTANTE*_ \n\n_Ten presente que la aplicación que vas a utilizar a continuación para cambiar el nombre y contraseña de tus redes solo funciona en dispositivos móviles como tu teléfono y no en computadoras a menos de que éstas cuenten con un emulador de Android o iOS._`
